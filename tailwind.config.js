@@ -1,5 +1,21 @@
 export default {
-  theme: {},
+  theme: {
+    colors: {
+      yellow: "#F3E378",
+      "white-cream": "#FFFBE6",
+      orange: "#F96539",
+      "dark-green": "#84A96F",
+      "light-green": "#BFD8AF",
+      white: "#FFFFFF",
+      black: "#000000",
+    },
+    extend: {
+      fontFamily: {
+        dela: "DelaGothic",
+        arimo: "Arimo",
+      },
+    },
+  },
   plugins: [],
   content: [
     `~/components/**/*.{vue,js,ts}`,

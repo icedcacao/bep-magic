@@ -42,6 +42,7 @@ async function handleFile(e) {
 </script>
 
 <template>
+  <h1 class="font-dela">ddd</h1>
   <form @submit.prevent="handleImageUpload">
     <input multiple type="file" @change="handleFile($event)" />
     <input type="submit" />

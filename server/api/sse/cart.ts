@@ -2,7 +2,7 @@ export default defineEventHandler(async (event) => {
   const { send } = useSSE(event, `sse:${indexEmitter.cartEmitterName}`);
 
   const callbackEmitter = () => {
-    send(() => ({ message: "Updated!" }));
+    send(() => ({ message: "Cart Updated!" }));
   };
 
   indexEmitter.cartEmitter.on(indexEmitter.cartEmitterName, callbackEmitter);

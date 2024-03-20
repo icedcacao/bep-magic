@@ -6,7 +6,7 @@ import User from "~/server/models/user.schema";
 export default NuxtAuthHandler({
   secret: useRuntimeConfig().authSecret,
   pages: {
-    signIn: "/signin",
+    signIn: "/admin/signin",
   },
   providers: [
     CredentialsProvider.default({
@@ -19,7 +19,7 @@ export default NuxtAuthHandler({
           return user;
         } else {
           console.error(
-            "Warning: Malicious login attempt registered, bad credentials provided"
+            "Warning: Malicious login attempt registered, bad credentials provided",
           );
           return null;
         }
