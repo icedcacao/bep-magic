@@ -1,5 +1,5 @@
 <template>
-  <h1 class="font-dela text-4xl">Food</h1>
+  <h1 class="font-dela text-4xl">Menu</h1>
   <div class="grid gap-4">
     <AdminMenuGridLabel />
     <AdminMenuItemList />

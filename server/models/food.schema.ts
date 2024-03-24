@@ -1,11 +1,26 @@
 import { Schema, model } from "mongoose";
 
 const NutritionalSchema = new Schema({
-  Calories: Number,
-  Protein: Number,
-  Carbs: Number,
-  Fat: Number,
-  Fiber: Number,
+  calories: {
+    type: Number,
+    required: true,
+  },
+  protein: {
+    type: Number,
+    required: true,
+  },
+  carbs: {
+    type: Number,
+    required: true,
+  },
+  fat: {
+    type: Number,
+    required: true,
+  },
+  fiber: {
+    type: Number,
+    required: true,
+  },
 });
 
 const FoodSchema = new Schema({
@@ -13,15 +28,17 @@ const FoodSchema = new Schema({
     type: String,
     required: true,
   },
-  image_url: String,
+  image_url: {
+    type: String,
+  },
   price: {
     type: Number,
     required: true,
   },
   category: {
     type: String,
-    enum: ["main", "drink", "desert"],
-    default: "main",
+    enum: ["Main", "Drink", "Dessert"],
+    default: "Main",
     required: true,
   },
   description: {
@@ -32,7 +49,17 @@ const FoodSchema = new Schema({
     required: true,
     default: false,
   },
-  nutritional_value: NutritionalSchema,
+  nutritional_value: {
+    type: NutritionalSchema,
+    required: true,
+    default: {
+      calories: 0,
+      protein: 0,
+      carbs: 0,
+      fat: 0,
+      fiber: 0,
+    },
+  },
 });
 
 export default model("Food", FoodSchema);

@@ -1,14 +1,14 @@
-import { getServerSession } from "#auth";
+// import { getServerSession } from "#auth";
 import Food from "~/server/models/food.schema";
 import mongoose from "mongoose";
 const appConfig = useAppConfig();
 const runtimeConfig = useRuntimeConfig();
 
 export default defineEventHandler(async (event) => {
-  const session = await getServerSession(event);
-  if (!session) {
-    throw createError(appConfig.error.unauthorized);
-  }
+  // const session = await getServerSession(event);
+  // if (!session) {
+  //   throw createError(appConfig.error.unauthorized);
+  // }
   try {
     const body = await readBody(event);
     if (body.image_url != undefined) {

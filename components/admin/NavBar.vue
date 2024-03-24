@@ -1,15 +1,15 @@
 <template>
-  <nav class="bg-white-cream fixed h-screen space-y-4 p-4">
-    <h1 class="font-dela text-center text-4xl">MF</h1>
+  <nav class="fixed h-screen space-y-4 bg-white-cream p-4">
+    <h1 class="text-center font-dela text-4xl">MF</h1>
     <div class="h-0.5 w-full bg-black"></div>
     <div class="space-y-4">
       <NuxtLink
-        to="/admin/food"
+        to="/admin/menu"
         class="flex justify-center rounded border-2 border-black stroke-white p-2"
         activeClass="admin-nav-active"
       >
         <svg
-          class="h-12 w-12 fill-current"
+          class="fill-current h-12 w-12"
           xmlns="http://www.w3.org/2000/svg"
           height="24"
           viewBox="0 -960 960 960"
@@ -26,7 +26,7 @@
         activeClass="admin-nav-active"
       >
         <svg
-          class="h-12 w-12 fill-current"
+          class="fill-current h-12 w-12"
           xmlns="http://www.w3.org/2000/svg"
           height="24"
           viewBox="0 -960 960 960"
