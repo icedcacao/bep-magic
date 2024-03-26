@@ -11,6 +11,9 @@ export default defineNuxtConfig({
     authSecret: process.env.AUTH_SECRET,
     mongoUri: process.env.MONGO_URI,
     imageXApiKey: process.env.IMAGE_X_API_KEY,
+    public: {
+      imageDomain: process.env.IMAGE_DOMAIN,
+    },
   },
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",

@@ -5,7 +5,9 @@ export const useFoodStore = defineStore("foodStore", {
   }),
   actions: {
     async fetch() {
-      const foods = await $fetch("/api/food/admin");
+      const foods = await $fetch("/api/food/admin", {
+        headers: useRequestHeaders(["cookie"]),
+      });
       this.list = foods as DFood[];
     },
   },

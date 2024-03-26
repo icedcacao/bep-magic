@@ -1,26 +1,31 @@
-// import { getServerSession } from "#auth";
+import { getServerSession } from "#auth";
 import Food from "~/server/models/food.schema";
 import mongoose from "mongoose";
 const appConfig = useAppConfig();
 const runtimeConfig = useRuntimeConfig();
 
 export default defineEventHandler(async (event) => {
-  // const session = await getServerSession(event);
-  // if (!session) {
-  //   throw createError(appConfig.error.unauthorized);
-  // }
+  const session = await getServerSession(event);
+  console.log(session);
+  if (!session) {
+    throw createError(appConfig.error.unauthorized);
+  }
+
   try {
     const body = await readBody(event);
     if (body.image_url != undefined) {
-      const res: any = await $fetch("http://localhost:3001/upload", {
-        headers: {
-          "x-api-key": runtimeConfig.imageXApiKey,
+      const res: any = await $fetch(
+        `${runtimeConfig.public.imageDomain}/upload`,
+        {
+          headers: {
+            "x-api-key": runtimeConfig.imageXApiKey,
+          },
+          method: "POST",
+          body: {
+            image: body.image_url,
+          },
         },
-        method: "POST",
-        body: {
-          image: body.image_url,
-        },
-      });
+      );
       body.image_url = res.imageUrl;
     }
     await new Food(body).save();

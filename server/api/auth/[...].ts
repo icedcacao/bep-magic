@@ -16,7 +16,10 @@ export default NuxtAuthHandler({
           credentials?.username === user?.username &&
           credentials?.password === user?.password
         ) {
-          return user;
+          return {
+            name: user?.username,
+            role: user?.role,
+          };
         } else {
           console.error(
             "Warning: Malicious login attempt registered, bad credentials provided",

@@ -1,7 +1,7 @@
 export default {
   theme: {
     colors: {
-      yellow: "#F3E378",
+      yellow: "#EFDD67",
       "white-cream": "#FFFBE6",
       orange: "#F96539",
       "dark-green": "#84A96F",

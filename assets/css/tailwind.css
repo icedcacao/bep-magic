@@ -11,6 +11,28 @@
     font-family: Arimo;
     src: url("/fonts/Arimo-VariableFont_wght.ttf") format("truetype");
   }
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #57534e;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #44403c;
+  }
+
+  ::-webkit-file-upload-button {
+    display: none;
+  }
 }
 
 @layer components {
