@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #57534e;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #44403c;
+  }
+
+  ::-webkit-file-upload-button {
+    display: none;
+  }
+}
+
+@layer components {
+  .admin-nav-active {
+    @apply translate-x-0;
+  }
+  .admin-nav-inactive {
+    @apply -translate-x-full;
+  }
+}
