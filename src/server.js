@@ -12,12 +12,11 @@ const setupServer = async () => {
   const app = express();
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(express.static(path.resolve(__dirname, "..", "client", "dist")));
   app.use(cors());
   app.use(morgan("dev"));
   app.use(cookieParser());
   app.use("/", apiRoutes);
-
+  app.use(express.static(path.resolve(__dirname, "..", "client", "dist")));
   return app.listen({ port: process.env.PORT || 3000 }, () => {
     console.log(`Server is running at PORT ${process.env.PORT}`);
   });
